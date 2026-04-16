@@ -8,3 +8,6 @@
 import csv
 
 # TODO: Complete this version (it should be only ~5 lines total)
+with open("favorites.csv", "r") as file:
+    for row in csv.DictReader(file):
+        print(row["language"])

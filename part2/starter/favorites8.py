@@ -10,7 +10,7 @@
 
 import csv
 
-with open("../week1/favorites.csv", "r") as file:
+with open("favorites.csv", "r") as file:
     reader = csv.DictReader(file)
     counts = {}
     for row in reader:
@@ -21,6 +21,8 @@ with open("../week1/favorites.csv", "r") as file:
             counts[favorite] = 1
 
 # TODO: Print counts sorted by value (highest first)
+for language in sorted(counts, key=counts.get, reverse=True):
+    print(f"{language}: {counts[language]}")
 # Expected output:
 #   Python: 196
 #   C: 40

@@ -1,0 +1,5 @@
+name,email,age
+Alice, alice@gmail.com, 25
+BOB,bob@yahoo,invalid
+Charlie  ,charlie@outlook.com,30
+,missing@email.com,45

@@ -1,3 +1,10 @@
+# Project 1 | Easy | 20–25 minutes
+#
+# Run from this folder:
+#   python starter.py
+#
+# The CSV file is at: ../../week1/favorites.csv
+
 import csv
 
 # ── Step 1: Read the CSV and count languages ──────────────────────────────────

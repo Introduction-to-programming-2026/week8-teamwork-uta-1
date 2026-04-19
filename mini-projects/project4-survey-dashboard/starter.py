@@ -11,10 +11,19 @@ import sqlite3
 
 # ══════════════════════════════════════════════════════════════════════════════
 # STEP 1 — CREATE THE DATABASE AND TABLE
+# ulpiana
 # ══════════════════════════════════════════════════════════════════════════════
 
 conn = sqlite3.connect("survey.db")
 db   = conn.cursor()
+
+# Columns: student_id TEXT, faculty TEXT, year INTEGER,
+#          satisfaction INTEGER, favourite_tool TEXT, comments TEXT
+#
+# Hint:
+# db.execute('''CREATE TABLE IF NOT EXISTS responses (
+#     ...
+# )''')
 
 db.execute('''CREATE TABLE IF NOT EXISTS responses (
     student_id TEXT,
@@ -27,8 +36,8 @@ db.execute('''CREATE TABLE IF NOT EXISTS responses (
 
 # ══════════════════════════════════════════════════════════════════════════════
 # STEP 2 — READ ALL THREE CSV FILES AND INSERT ROWS
+# (Coder A) ana
 # ══════════════════════════════════════════════════════════════════════════════
-
 csv_files = [
     "faculty_science.csv",
     "faculty_arts.csv",
@@ -39,6 +48,9 @@ for filename in csv_files:
     with open(filename, "r") as file:
         reader = csv.DictReader(file)
         for row in reader:
+              # TODO: Insert each row into the responses table
+            # Use ? placeholders — NEVER string formatting for SQL
+            # db.execute("INSERT INTO responses VALUES (?, ?, ?, ?, ?, ?)", (...))
             db.execute("INSERT INTO responses VALUES (?, ?, ?, ?, ?, ?)", (
                 row["student_id"],
                 row["faculty"],
